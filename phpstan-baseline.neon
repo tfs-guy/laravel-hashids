@@ -1,10 +1,31 @@
 parameters:
 	ignoreErrors:
 		-
-			message: "#^Unsafe usage of new static\\(\\)\\.$#"
+			message: '#^Unsafe usage of new static\(\)\.$#'
+			identifier: new.static
 			count: 3
 			path: src/Exceptions/InvalidOption.php
+
 		-
-			message: "#^Unsafe usage of new static\\(\\)\\.$#"
+			message: '#^Trait Bvtterfly\\LaravelHashids\\HasHashId is used zero times and is not analysed\.$#'
+			identifier: trait.unused
+			count: 1
+			path: src/HasHashId.php
+
+		-
+			message: '#^Binary operation "\.\=" between mixed and non\-falsy\-string results in an error\.$#'
+			identifier: assignOp.invalid
+			count: 1
+			path: src/HashIdOptions.php
+
+		-
+			message: '#^Method Bvtterfly\\LaravelHashids\\HashIdOptions\:\:salt\(\) should return string but returns mixed\.$#'
+			identifier: return.type
+			count: 1
+			path: src/HashIdOptions.php
+
+		-
+			message: '#^Unsafe usage of new static\(\)\.$#'
+			identifier: new.static
 			count: 1
 			path: src/HashIdOptions.php
